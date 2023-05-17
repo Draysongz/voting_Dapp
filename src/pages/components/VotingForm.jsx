@@ -3,7 +3,7 @@ import Styles from     '../../styles/Voting.module.css'
 import Image from "next/image";
 import Research from "./assets/research.jpeg";
 import Operation from "./assets/operation.jpeg";
-import ContractABI from "./ContractABI";
+import {ContractABI} from "./ContractABI";
 import { ethers } from "ethers";
 import { useState, useEffect } from "react";
 import {toast} from 'react-toastify'
