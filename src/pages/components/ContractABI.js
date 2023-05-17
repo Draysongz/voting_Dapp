@@ -1,4 +1,4 @@
-const ContractABI= [
+const ContractABI=[
 	{
 		"inputs": [
 			{
@@ -129,5 +129,4 @@ const ContractABI= [
 		"type": "function"
 	}
 ]
-
 export default  ContractABI;

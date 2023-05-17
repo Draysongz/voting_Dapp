@@ -10,13 +10,13 @@ import {toast} from 'react-toastify'
 
 const votingForm = () => {
 
-  const contractAddress = "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4";
+  const contractAddress = "0x256E05570B457F741a66Adf4197d5530255773e0";
   const [value, setValue] = useState("");
 
   const handleInput = (event) => {
     const inputValue = event.target.value;
     setValue(inputValue);
-    console.log(inputValue);
+    console.log(value);
   };
 
   const winningCandidate = async () => {
@@ -47,8 +47,8 @@ const votingForm = () => {
       await provider.send("eth_requestAccounts", []);
       const signer = await provider.getSigner();
       const address = await signer.getAddress();
-      const getCode = await provider.getCode(contractAddress);
-      console.log(getCode);
+      // const getCode = await provider.getCode(contractAddress);
+      // console.log(getCode);
       console.log(address);
       let receipt;
       const votingContract = new ethers.Contract(
@@ -67,13 +67,13 @@ const votingForm = () => {
       } else {
         // Process the vote
         console.log("Voting...");
-        toast.promise('Voting...');
+        toast.info('Voting...');
       }
   
       // Proceed with voting
       const transaction = await votingContract.vote(value);
   
-      receipt = await wait(transaction);
+      receipt = await transaction.wait()
   
       console.log("Vote submitted successfully!");
       toast.success("Vote Successful");
