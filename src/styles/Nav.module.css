@@ -61,3 +61,18 @@
     margin-top: 4%;
   }
 }
+
+
+@media only screen and (min-width:376px) and (max-width:600px){
+  .connectBtn{
+    width: 39vw;
+    height: 7vh;
+    padding: 0 !important;
+  }
+  .navContainer{
+    padding:4%;
+  }
+  .navContainer li{
+    margin-top: 4%;
+  }
+}
