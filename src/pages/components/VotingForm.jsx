@@ -11,16 +11,6 @@ import {toast} from 'react-toastify'
 const votingForm = () => {
 
   const contractAddress = "0x256E05570B457F741a66Adf4197d5530255773e0";
-  // const [value, setValue] = useState("");
-
-  // // const handleInput = (event) => {
-  // //   const inputValue = event.target.value;
-  // //   setValue(inputValue);
-  // //   console.log(value);
-  // // };
-  // useEffect(() => {
-  //   console.log(value); // Verify that the value is updated
-  // }, [value]);
 
   const winningCandidate = async () => {
     try {
@@ -71,7 +61,6 @@ const votingForm = () => {
   
       if (hasVoted) {
         console.log("Already voted");
-        toast.error('Already voted');
       } else {
         // Process the vote
         console.log("Voting...");
@@ -110,6 +99,9 @@ const votingForm = () => {
             proposals enables members to make decisions.<br></br>
             </p>
             <button className={Styles.Btn} onClick={(event) => voteCandidate(event, '0')}>Vote</button>
+        </div>
+        <div className={Styles.winnersdiv}>
+        <button className={Styles.winnersBtn} onClick={winningCandidate}>Check winning proposal</button>
         </div>
 
         <div className={Styles.research}>
