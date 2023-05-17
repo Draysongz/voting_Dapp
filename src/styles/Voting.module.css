@@ -1,0 +1,95 @@
+.votingCon{
+    background:rgba( 199, 228, 33);
+    color:black;
+}
+
+.voteContainer{
+    display:flex;
+    justify-content:space-evenly
+
+}
+
+.operational, .research{
+  background:black;
+  border-radius:10px;
+  padding:1%;
+  width:25vw;
+  height:62vh;
+  color:white;
+  display:flex;
+  flex-direction: column;
+  gap:6%;
+  justify-content: center;
+  box-shadow: 0px 5px 10px ;
+  border: 1px solid white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.res{
+    text-align:center;
+}
+.voteBtn{
+    width: 10vw;
+    height: 5.5vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: .2rem;
+    font-size: large;
+    border-radius:10px;
+    border:1px solid ;
+    background: rgb(199, 228, 33);
+    margin-left:5rem;
+    cursor:pointer;
+   } 
+   .Btn{
+    width: 10vw;
+    margin-top:-2%;
+    height: 5.5vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: .2rem;
+    font-size: large;
+    border-radius:10px;
+    border:1px solid ;
+    background: rgb(199, 228, 33);
+    margin-left:5rem;
+    cursor:pointer;
+   }
+
+   .voteBtn:hover{
+    background:transparent;
+    color:white;
+    border: 1px solid rgb(199, 228, 33);
+    cursor:pointer;
+    transition: .5s ease-in;
+  }
+  .voteCaption{
+    text-align:center;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:x-large;
+    padding:1%;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .operational{
+    animation:fadeIn 1.5s ease-in;
+  }
+  .research{
+    animation: slideInFromRight 1.5s ease-in;
+  }
