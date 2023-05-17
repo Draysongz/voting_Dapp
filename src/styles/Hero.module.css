@@ -46,3 +46,21 @@ animation:slideInFromRight 1.5s ease-in;
     }
   }
   
+
+  @media only screen and (min-width:100px) and (max-width:375px){
+    .heroImage{
+      display: none;
+    }
+    .left{
+      padding: 0 !important;
+    }
+    .title{
+      border: 1px solid red;
+      margin-left:1%;
+    }
+    .des{
+      margin-left:1%;
+      line-height: 30px;
+    }
+    
+  }

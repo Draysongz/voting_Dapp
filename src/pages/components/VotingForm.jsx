@@ -101,7 +101,7 @@ const votingForm = () => {
           <Image
               src={Operation}
               alt="Placeholder image"
-              className="rounded-lg mb-4"
+              className={Styles.rounded}
               width={310}
             />
             <p className={Styles.d}>

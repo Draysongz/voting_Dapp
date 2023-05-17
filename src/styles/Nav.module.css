@@ -48,3 +48,16 @@
   cursor:pointer;
   transition: .5s ease-in;
 }
+@media only screen and (min-width:100px) and (max-width:375px){
+  .connectBtn{
+    width: 39vw;
+    height: 7vh;
+    padding: 0 !important;
+  }
+  .navContainer{
+    padding:4%;
+  }
+  .navContainer li{
+    margin-top: 4%;
+  }
+}

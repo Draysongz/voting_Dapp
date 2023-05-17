@@ -93,3 +93,30 @@
   .research{
     animation: slideInFromRight 1.5s ease-in;
   }
+
+
+  @media only screen and (min-width:100px) and (max-width:375px){
+    .rounded , .resImage{
+      width: 250px;
+    }
+    .operational, .research{
+      width:70vw;
+      height:56vh;
+      align-self: center;
+      gap: 1em;
+      padding:2%;
+
+    }
+    .votingCon{
+      padding:3%;
+    }
+    .voteContainer{
+      flex-direction:column;
+      justify-content: center;
+      gap:2em !important;
+      padding:2%;
+    }
+    .voteBtn, .Btn{
+      width:25vw;
+    }
+    }
