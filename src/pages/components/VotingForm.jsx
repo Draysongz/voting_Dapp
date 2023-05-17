@@ -5,19 +5,22 @@ import Research from "./assets/research.jpeg";
 import Operation from "./assets/operation.jpeg";
 import ContractABI from "./ContractABI";
 import { ethers } from "ethers";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {toast} from 'react-toastify'
 
 const votingForm = () => {
 
   const contractAddress = "0x256E05570B457F741a66Adf4197d5530255773e0";
-  const [value, setValue] = useState("");
+  // const [value, setValue] = useState("");
 
-  const handleInput = (event) => {
-    const inputValue = event.target.value;
-    setValue(inputValue);
-    console.log(value);
-  };
+  // // const handleInput = (event) => {
+  // //   const inputValue = event.target.value;
+  // //   setValue(inputValue);
+  // //   console.log(value);
+  // // };
+  // useEffect(() => {
+  //   console.log(value); // Verify that the value is updated
+  // }, [value]);
 
   const winningCandidate = async () => {
     try {
@@ -39,9 +42,14 @@ const votingForm = () => {
       toast.error("Error Message: ", error.data)
     }
   };
-  const voteCandidate = async (event) => {
+  const voteCandidate = async (event, value) => {
     event.preventDefault();
-    await handleInput(event);
+    
+    if (!value) {
+      console.log('Please select a valid candidate.');
+      toast.error('Please select a valid candidate.');
+      return;
+    }
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       await provider.send("eth_requestAccounts", []);
@@ -78,8 +86,8 @@ const votingForm = () => {
       console.log("Vote submitted successfully!");
       toast.success("Vote Successful");
     } catch (error) {
-      toast.error(error);
-      console.log("Failed, reason: ", error);
+      toast.error(error.reason);
+      console.log("Failed, reason: ", error.reason || error.message);
     }
   };
   
@@ -101,7 +109,7 @@ const votingForm = () => {
             functioning of our company.<br/> Voting on Operational Expenses
             proposals enables members to make decisions.<br></br>
             </p>
-            <button className={Styles.Btn} onClick={voteCandidate} value='0'>Vote</button>
+            <button className={Styles.Btn} onClick={(event) => voteCandidate(event, '0')}>Vote</button>
         </div>
 
         <div className={Styles.research}>
@@ -116,7 +124,7 @@ const votingForm = () => {
             <p className={Styles.d}>With Research Projects, we aim to foster<br/> innovation and 
             explore new frontiers. Members can vote on proposals  that focus on
             groundbreaking research initiatives, </p>
-            <button className={Styles.voteBtn} value='1' onClick={voteCandidate}>Vote</button>
+            <button className={Styles.voteBtn} onClick={(event) => voteCandidate(event, '1')}>Vote</button>
         </div>
       </div>
     </div>
